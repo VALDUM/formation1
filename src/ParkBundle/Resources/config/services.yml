@@ -1,7 +1,10 @@
 services:
+
     park.twig.computer_extension:
         class: ParkBundle\Twig\ComputerExtension
         tags:
             - { name: twig.extension }
 
-
+    park.computer_manager:
+        class: ParkBundle\Services\ComputerManager
+        arguments: ["@doctrine"]
