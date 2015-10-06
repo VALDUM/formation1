@@ -17,7 +17,7 @@ class ComputerType extends AbstractType
         $builder
             ->add('name')
             ->add('ip')
-            ->add('enabled')
+            ->add('enabled','checkbox',['required'=>false])
             ->add('person')
         ;
     }

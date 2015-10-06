@@ -36,6 +36,13 @@ class Person
     private $lastname;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="age", type="integer", length=20)
+     */
+    private $age;
+
+    /**
      * @ORM\OneToOne(targetEntity="ParkBundle\Entity\Computer", cascade={"persist"})
      */
     private $computers;
@@ -152,6 +159,31 @@ class Person
 
         return $this;
     }
+
+    /**
+     * Set age
+     *
+     * @param integer $age
+     *
+     * @return Person
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
 
     public function __toString()
     {
