@@ -1,0 +1,7 @@
+services:
+    park.twig.computer_extension:
+        class: ParkBundle\Twig\ComputerExtension
+        tags:
+            - { name: twig.extension }
+
+

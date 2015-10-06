@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ parent() }} Ordinateurs {% endblock %}
+
+{% block body %}
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>{{'park.computer.label.name'|trans}}</th>
+        <th>Ip</th>
+        <th>Enabled</th>
+    </tr>
+    {% for computer in computers %}
+        <tr>
+            <td>{{ computer.id }}</td>
+            <td>{{ computer.name|computer_name}}</td>
+            <td>{{ computer.ip }}</td>
+            <td>{{ computer.enabled|computer_status}}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="4">Pas de données</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock body %}
+
+

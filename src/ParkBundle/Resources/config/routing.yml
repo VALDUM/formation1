@@ -1,0 +1,8 @@
+park_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ParkBundle:Default:index }
+
+park2_homepage:
+    path:     /bonjour/{name}
+    defaults: { _controller: ParkBundle:Default:index2 }
+
