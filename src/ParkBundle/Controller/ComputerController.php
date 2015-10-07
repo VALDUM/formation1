@@ -244,4 +244,28 @@ class ComputerController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * @Route(
+     *    "/calculator/{mntaa}/{mntbb}",
+     *    name="computer_somme",
+     *    requirements={
+     *         "mntaa":"^\d+",
+     *         "mntbb":"^\d+"
+     *      }
+     * )
+     * @Template()
+     */
+    public function calculatorAction($mntaa,$mntbb)
+    {
+        //var_dump($mntaa,$mntbb);
+        $som = $this->get('park.calculator')->somme($mntaa ,$mntbb);
+        //var_dump($som);
+        return array(
+            'mntaa' => $mntaa,
+            'mntbb' => $mntbb,
+            'som' => $som,
+        );
+        //die;
+    }
 }
